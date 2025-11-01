@@ -1,0 +1,35 @@
+header {
+    display: flex;
+    padding-inline: 16px;
+    padding-block: 8px;
+    background-color: darkolivegreen;
+    color:beige;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    > span {
+       cursor: pointer;
+            &:hover {
+                color: blueviolet;
+            } 
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            cursor: pointer;
+            &:hover {
+                color: blueviolet;
+            }
+        }
+    }
+}

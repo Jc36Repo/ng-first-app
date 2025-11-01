@@ -1,0 +1,21 @@
+<h3>List of ToDos</h3>
+<!--Built in directive-->
+<p *ngIf="!todoItems().length">Fetching List of ToDos....</p>
+
+<!--Control flow-->
+@if (!todoItems().length) {
+    <p>Another Way of Loading Message.....</p>
+}
+
+<form>
+    <label>Filter ToDos</label>
+    <input name="searchTerm" [(ngModel)]="searchTerm" placeholder="Search ToDos...">
+</form>
+
+
+<ul class = "todos">
+    @for (todo of todoItems() | filterTodos : searchTerm(); track todo.id) {
+        <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo"/>
+}
+</ul>
+
